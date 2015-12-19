@@ -114,7 +114,7 @@ sum(missingvalue)</code></pre>
 <pre><code>## [1] 2304</code></pre>
 <p>There are 2304 missing values in the dataset.</p>
 <ul>
-<li>Devise a strategy for filling in all of the missing values in the dataset. For example, you could use the mean/median for that day, or the mean for that 5-minute interval, etc. Create a new dataset that is equal to the original dataset but with the missing data filled in.</li>
+<li>Create a new dataset that is equal to the original dataset but with the missing data filled in. Here I devise a strategy for filling in all of the missing values in the dataset. I use the mean for that 5-minute interval to replace the missing value.</li>
 </ul>
 <pre class="r"><code>replacedData &lt;- merge(activityData, averageStep, by.x = &quot;interval&quot;,by.y = &quot;Interval&quot;)
 NA_replace &lt;- function(x,y){

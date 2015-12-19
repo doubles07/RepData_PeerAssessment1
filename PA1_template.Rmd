@@ -55,7 +55,8 @@ sum(missingvalue)
 ```
 There are 2304 missing values in the dataset.
 
-- Devise a strategy for filling in all of the missing values in the dataset. For example, you could use the mean/median for that day, or the mean for that 5-minute interval, etc. Create a new dataset that is equal to the original dataset but with the missing data filled in.
+- Create a new dataset that is equal to the original dataset but with the missing data filled in.
+Here I devise a strategy for filling in all of the missing values in the dataset. I use the mean for that 5-minute interval to replace the missing value.
 ```{r}
 replacedData <- merge(activityData, averageStep, by.x = "interval",by.y = "Interval")
 NA_replace <- function(x,y){
